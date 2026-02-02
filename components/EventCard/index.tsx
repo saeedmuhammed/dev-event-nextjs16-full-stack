@@ -7,11 +7,12 @@ export interface IEvent {
   title: string;
   date: string;
   time: string;
+  slug: string;
 }
 
-const EventCard = ({ imageSrc, location, title, date, time }: IEvent) => {
+const EventCard = ({ imageSrc, location, title, date, time, slug }: IEvent) => {
   return (
-    <Link href="#" className="rounded-t-[14px] overflow-clip">
+    <Link href={`/events/${slug}`} className="rounded-t-[14px] overflow-clip">
       <Image
         src={imageSrc}
         alt="event-image"
