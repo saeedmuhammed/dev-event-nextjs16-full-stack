@@ -40,7 +40,6 @@ export async function dbConnect() {
   try {
     mongooseCache.conn = await mongooseCache.promise;
   } catch (e) {
-    console.log(e, "e saeed");
     mongooseCache.promise = null;
     throw e;
   }
