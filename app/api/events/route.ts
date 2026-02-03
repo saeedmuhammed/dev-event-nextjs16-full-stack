@@ -16,22 +16,15 @@ export async function POST(req: NextRequest) {
         { status: 400 },
       );
     }
+
+    const agenda = JSON.parse(data.get("agenda") as string);
+    const tags = JSON.parse(data.get("tags") as string);
     const sanitizedEvent = {
       ...event,
       mode: (event.mode as string)?.trim().toLowerCase(),
-      agenda:
-        typeof event.agenda === "string"
-          ? [event.agenda]
-          : Array.isArray(event.agenda)
-            ? (event.agenda as string[])
-            : [],
+      agenda,
       image: "",
-      tags:
-        typeof event.tags === "string"
-          ? [event.tags]
-          : Array.isArray(event.tags)
-            ? (event.tags as unknown as string[])
-            : [],
+      tags,
     };
 
     const file = data.get("image") as File | null;
