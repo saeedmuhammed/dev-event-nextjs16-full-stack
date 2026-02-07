@@ -133,7 +133,7 @@ const EventDetailsPage = async ({
           />
         </div>
         <aside className="flex-1 h-fit bg-[#0D161A] rounded-xl">
-          <BookEventForm />
+          <BookEventForm eventId={event?._id} />
         </aside>
       </div>
       <EventOverview overview={overview} />
