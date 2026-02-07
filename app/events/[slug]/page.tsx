@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import BookEventForm from "@/components/BookEventForm";
 import EventCard from "@/components/EventCard";
 import FlexRow from "@/components/shared/FlexRow";
