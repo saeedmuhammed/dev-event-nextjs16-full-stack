@@ -3,22 +3,12 @@ export const dynamic = "force-dynamic";
 import EventCard from "@/components/EventCard";
 import ExploreEventsBtn from "@/components/ExploreEventsBtn";
 
-// const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
 export default async function Home() {
-  // const res = await fetch(`${BASE_URL}/api/events`);
+  const res = await fetch(`${BASE_URL}/api/events`);
 
-  const events = [
-    {
-      title: "React Summit 2024",
-      date: "2024-09-15",
-      time: "10:00 AM - 5:00 PM",
-      location: "Amsterdam, Netherlands",
-      image: "/events/react-summit.jpg",
-      slug: "react-summit-2024",
-    },
-  ];
-  // const { events } = await res.json();
+  const { events } = await res.json();
   return (
     <div>
       <div className="w-full my-12.5 md:my-25 flex flex-col items-center gap-7.5">
